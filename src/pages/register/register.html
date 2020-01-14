@@ -1,0 +1,73 @@
+<ion-header class="header">
+    <ion-navbar hideBackButton color="color1" text-center>
+      <ion-title class="registertitle">Creat New Account</ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content class="conten" text-center >
+        <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-label floating>User Name</ion-label>
+                        <ion-input  type="text" [(ngModel)]="profile.username" ></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label floating>Full Name</ion-label>
+                      <ion-input   type="text" [(ngModel)]="profile.fullname" ></ion-input>
+                  </ion-item>
+                </ion-col>
+            </ion-row>
+    <form [formGroup]="credentialsForm">
+            <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-label floating>Email Address</ion-label>
+                        <ion-input [formControl]="credentialsForm.controls['email']" type="email" [(ngModel)]="user.email"></ion-input>
+                    </ion-item>
+                    <div *ngIf="!credentialsForm.controls.email.valid && credentialsForm.controls.email.dirty" class="validator-error">
+                        Please enter a valid email.
+                    </div>
+                    <!-- <ion-item>
+                        <ion-label floating>User Name</ion-label>
+                        <ion-input [formControl]="credentialsForm.controls['name']"  type="text" [(ngModel)]="user.name" required ></ion-input>
+                    </ion-item>
+                    <div *ngIf="!credentialsForm.controls.name.valid && credentialsForm.controls.name.dirty" class="validator-error">
+                            Username is not allowed.
+                    </div> -->
+                    <div>
+                        <form name="myForm" novalidate>
+                            <ion-item>
+                                <ion-label floating>Password</ion-label>
+                                <ion-input [formControl]="credentialsForm.controls['password']" name="password" type="{{type}}" [(ngModel)]="user.password" required></ion-input>
+                                <button class="showpass" title="Show Password" *ngIf="!showPass" ion-button large clear  type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
+                                <button class="showpass" title="Hide Password" *ngIf="showPass" ion-button large clear  type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
+                            </ion-item>
+                            <password-strength-bar [passwordToCheck]="user.password" [barLabel]="barLabel" ></password-strength-bar>
+                            <div *ngIf="!credentialsForm.controls.password.valid && credentialsForm.controls.password.dirty" class="validator-error">
+                                    Passwords should be at least 8 characters long and should contain at least one letter and one number.
+                            </div>
+                        </form>        
+                    </div>
+                </ion-col>
+            </ion-row>
+        </form>
+
+      <ion-row>
+        <ion-col text-center class="termsconds">
+                By signing up, you agree to our <button class="termsbutton">Terms and Privacy Policy</button>
+            </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col text-center >
+              <button  class="signup" ion-button round outline [disabled]="!credentialsForm.valid" (click)="register(user)" color="transparant">Sign Up</button>            
+          </ion-col>
+      </ion-row>
+
+  </ion-content>
+  
+  <ion-footer >
+      <ion-navbar hideBackButton text-center color="color1" >
+           <p class="signin">Have an account? <button class="signinb" (click)="navigateToLoginPage()">Login</button></p>
+      </ion-navbar>
+      
+  </ion-footer>

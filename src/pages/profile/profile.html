@@ -1,0 +1,100 @@
+ 
+ <!-- ===================================== CROP ======================================== -->
+
+<div class="crop" *ngIf="imagetocrop == 1">
+    <!-- <div class="crop" > -->
+        <ion-col style="height:100%;">
+                <ion-row style="background-color:black; width:100%; height:80%;  display: table;">
+                        <div class="cropperimage">
+                                <!-- <angular-cropper  #angularCropper [cropperOptions]="cropperOptions" [imageUrl]="'https://www.kholic.id/wp-content/uploads/2018/03/hangain-mistress-1ststills-ist.jpg'"></angular-cropper> -->
+                                <angular-cropper #angularCropper [cropperOptions]="cropperOptions" [imageUrl]="myImage" *ngIf="myImage"></angular-cropper>
+                        </div>
+                </ion-row>
+                <ion-row  style="background-color:black; width:100%; height:20%;">
+                        <div class="croppermenu">
+                        <ion-row >
+                            <ion-col >
+                                    <button class="cropmenubutton" ion-button icon-only (click)="reset()">
+                                        <ion-icon name="refresh"></ion-icon>
+                                    </button>
+                            </ion-col>
+                            <ion-col >
+                                    <button class="cropmenubutton" ion-button icon-only (click)="save()">
+                                        <ion-icon name="checkmark"></ion-icon>
+                                    </button>
+                            </ion-col>
+                            <ion-col >
+                                    <button class="cropmenubutton" ion-button icon-only (click)="cancel()">
+                                        <ion-icon icon-only name="close"></ion-icon>
+                                    </button>
+                            </ion-col>
+                        </ion-row>
+
+                        </div>
+                </ion-row>
+        </ion-col>
+</div>
+
+ <!-- ========================================================================================== -->
+<ion-content class="conten">
+    <ion-fab >
+        <button class="fabmenu" ion-fab menuToggle><ion-icon name="menu"></ion-icon></button>
+    </ion-fab>
+    <ion-fab right >
+        <button class="fabcam" ion-fab ><ion-icon name="camera"></ion-icon></button>
+        <ion-fab-list class="fabcamlist" side="bottom">
+            <button (click)="captureImage()"  ion-fab class="fabcamlisticon" ><ion-icon title="Take Picture From Camera" name="camera" ></ion-icon></button>
+            <button (click)="pickImage()"  ion-fab class="fabcamlisticon"  ><ion-icon title="Take Picture From Galery" name="folder" ></ion-icon></button>
+            <button (click)="deleteimage()" ion-fab class="fabcamlisticon"><ion-icon title="Delete Picture" name="trash"></ion-icon></button>
+          </ion-fab-list>
+    </ion-fab>
+
+<div class="profilepic">
+    <div class="profilebox">
+        <ion-row >
+              <ion-col col-3 *ngIf="profile?.ppstatus == 0">
+                      <span *ngFor="let pi of profileimage" class="circle">{{pi.alphabet}}</span>
+              </ion-col>
+              <ion-col col-3 *ngIf="profile?.ppstatus == 1">         
+                      <span  class="circle2"><img style="cursor: pointer; border-radius: 50%;object-fit: cover; height:100%;" src="{{imgsource}}" imageViewer></span>
+              </ion-col>
+        </ion-row>
+    </div>    
+</div>
+
+<!-- ========================================================================================== -->
+<div class="mainconten">
+    <ion-list>
+        <ion-item-divider color="light">Profile</ion-item-divider>
+            <ion-item >
+                    <ion-label stacked>Name</ion-label>
+                    <ion-input class="inputdisable" placeholder="{{profile?.fullname}}"></ion-input>
+                    <button style="background-color: transparent; color:grey;" item-right (click)="editname()"><ion-icon name="md-create" item-end></ion-icon></button>
+            </ion-item>
+            <!-- {{ (profile | async)?.fullname }} -->
+            <ion-item >
+                    <ion-label stacked>Username</ion-label>
+                    <ion-input class="inputdisable" placeholder="{{profile?.username}}"></ion-input>
+                    <button style="background-color: transparent; color:grey;" item-right (click)="editusername()"><ion-icon name="md-create" item-end></ion-icon></button>
+            </ion-item>
+            <ion-item>
+                    <ion-label stacked>Email</ion-label>
+                    <ion-input class="inputdisable" placeholder="{{profile?.email}}"></ion-input>
+            </ion-item>
+            <ion-item>
+                    <ion-label stacked>Date Create</ion-label>
+                    <ion-input class="inputdisable" placeholder="{{profile?.datecreate}}"></ion-input>
+            </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-item-divider color="light">Setting</ion-item-divider>
+        <ion-item><ion-icon class="settingicon" name="notifications" item-start></ion-icon>Notification</ion-item>
+        <ion-item><ion-icon class="settingicon" name="disc" item-start></ion-icon>Data and Storage</ion-item>
+        <ion-item><ion-icon class="settingicon" name="help-circle" item-start></ion-icon>Help</ion-item>
+        <ion-item><ion-icon class="settingicon" name="help" item-start></ion-icon>FAQ</ion-item>
+        <ion-item><ion-icon class="settingicon" name="lock" item-start></ion-icon>Privacy Policy</ion-item>
+    </ion-list>
+</div>
+
+</ion-content>
+      

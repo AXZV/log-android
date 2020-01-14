@@ -1,0 +1,84 @@
+page-login 
+{
+    .forgetpass_signup {
+        background-color: transparent;
+        font-weight: bold;
+        color: grey;
+        font-size: 12px;
+        padding:0;
+    }
+    .forgetpass_signup:hover {
+        background-color: transparent;
+        color: orange;
+    }
+    
+    .item.item-input {
+        background-color: transparent;
+        color:white;
+
+    }
+
+    .conten
+    {
+        background: linear-gradient(to right, #232526, #414345);
+        ::-webkit-scrollbar{
+            display:none;
+            }
+    }
+    .showpass
+    {
+        color: rgb(167, 167, 167);
+        top: 20%;
+        left: 5%;
+        background-color: transparent;
+    }
+    .showpass:hover
+    {
+        color:orange;
+    }
+    .signin
+    {
+        color:orange;
+    }
+    .signin:hover
+    {
+        color:white;
+    }
+    ion-header, ion-footer {
+        .toolbar {      
+          .toolbar-background {
+            background: rgba(36, 36, 36, 0.308);
+          }
+          .toolbar-title {
+            color: orange;
+            
+          }
+        }
+      }
+      .item-input-has-focus .label-md[floating], .input-has-focus .label-md[floating]{
+        color: white; //label color when focusing
+        ion-footer, .ion-footer
+        {
+            .toolbar {      
+                .toolbar-background {
+                  background: red;
+               
+                }
+            }
+        }
+
+        }
+        .item-input .label-md{
+                color: grey; //label color
+        }
+        .validator-error
+        {
+            color: white;
+            font-size: 12px;
+            padding-top: 5px;
+        }
+
+
+
+
+}

@@ -1,0 +1,101 @@
+page-register
+{
+    .signup
+    {
+        color: orange;
+        outline-color: orange !important;
+    }
+    .signup:hover
+    {
+        color: white;
+        outline-color: orange !important;
+    }
+    .signin, .signinb {
+        background-color: transparent;
+        font-size: 13px;
+        color: grey;
+    }
+    .signinb
+    {
+        font-weight: bold;
+        padding:0;
+    }
+    .signinb:hover {
+        background-color: transparent;
+        color: orange;
+    }
+    .termsbutton
+    {
+        background-color: transparent;
+        font-weight: bold;
+        font-style: italic;
+        color: grey;
+        font-size: 10px;
+        padding:0;
+    }
+    .termsbutton:hover
+    {
+        color: orange;
+    }
+    
+    .item.item-input {
+        background-color: transparent;
+        color:white;
+    }
+    .item-input-has-focus .label-md[floating], .input-has-focus .label-md[floating]{
+        color: white; //label color when focusing
+
+        }
+        .item-input .label-md{
+                color: grey; //label color
+        }
+    .conten
+    {
+        background: linear-gradient(to right, #232526, #414345);
+        ::-webkit-scrollbar{
+            display:none;
+            }
+    }
+    .termsconds
+    {
+        padding-top: 10%;
+        color: grey;
+        font-size: 10px;
+    }
+    .showpass
+    {
+        color: rgb(167, 167, 167);
+        top: 20%;
+        left: 5%;
+        background-color: transparent;
+    }
+    .showpass:hover
+    {
+        color:orange;
+    }
+
+      ion-header, ion-footer {
+        .toolbar {      
+          .toolbar-background {
+            background: rgba(36, 36, 36, 0.308);
+          }
+          .toolbar-title {
+            color: orange;
+          }
+        }
+      }
+
+      .validator-error
+      {
+          color: white;
+          font-size: 12px;
+          padding-top: 5px;
+      }
+
+      .registertitle
+      {
+          font-size: 1%;
+      }
+
+
+}

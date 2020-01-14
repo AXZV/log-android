@@ -1,0 +1,191 @@
+page-profile {
+    ion-title {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0 90px 1px;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+      }
+      ion-header, ion-footer {
+        .toolbar {      
+          .toolbar-background {
+            background:transparent;
+            box-shadow: none;
+          }
+
+        }
+      }
+      .conten
+      {
+        //   background: linear-gradient(to right, #232526, #414345);
+          ::-webkit-scrollbar{
+              display:none;
+              }
+              
+
+      }
+
+      // ============================================================================================
+     .fabmenu
+     {
+         background-color: transparent;
+         box-shadow: none;
+         color: orange;
+     }
+     .fabmenu:focus
+     {
+        background-color: transparent;
+        color: orange;
+        box-shadow: none;
+     }
+     .fabcam
+     {
+        background-color: orange;
+        // box-shadow: none;
+        color: #232526;
+        float: right;
+        margin-top: 120px;
+
+     }
+     .fabcam:focus
+     {
+        background-color: orange;
+        color: #232526;
+     }
+     .fabcamlist
+     {
+        margin-top:180px;
+     }
+     .fabcamlisticon
+     {
+        background-color: #232526;
+        color: orange;
+     }
+
+
+     // ============================================================================================
+  .circle {
+    height: 100px;
+    width: 100px;
+    background-color: rgb(73, 73, 73);
+    color:white;
+    border-radius: 100%;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px; 
+    text-transform: uppercase;
+  }
+  .circle2 {
+    height: 100px;
+    width: 100px;
+    background-color:  rgb(73, 73, 73);
+    border-radius: 100%;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px; 
+    text-transform: uppercase;
+  }
+  .profilepic
+  {
+     background: linear-gradient(to right, #232526, #414345);
+      height: 150px;
+      width: 100%;
+      position: fixed;
+      top: 0;
+      left:0;
+      z-index: 1110;  
+  }
+  .profilebox
+  {
+    color: orange;
+    margin: 0 auto;
+    padding-top: 5%;
+    width: 110px;
+    
+  }
+  .buttonpic
+  {
+    border-radius: 100%;
+    background-color: transparent;
+  }
+
+   // ============================================================================================
+  .inputdisable
+  {
+    pointer-events:none;
+    ::-webkit-input-placeholder
+    {
+      color: black;
+      opacity: 1;
+    }
+  }
+  .mainconten
+  {
+    margin-top: 150px;
+  }
+
+  .settingicon
+  {
+    color:grey;
+  }
+
+// ============================================================================================
+  .crop
+  {
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    z-index: 1000000000;
+    position: absolute;
+    ::-webkit-scrollbar{
+      display:none;
+      }
+  }
+   .croppermenu
+  {
+    background-color: black;
+    position:fixed;
+    bottom:0;
+    width: 100%;
+    margin:0 auto;
+  }
+
+  .cropperimage
+  {
+
+    align-items: center;
+    height: auto;
+    margin: 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .cropmenubutton
+  {
+    background-color: transparent;
+    display:block;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 0px solid white;
+    margin: 0 auto;
+    
+  }
+  .cropmenubutton:hover
+  {
+    background-color: transparent;
+  }
+
+
+
+
+
+  
+
+
+
+}

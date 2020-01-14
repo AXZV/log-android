@@ -1,0 +1,44 @@
+<ion-menu [content]="content"[swipeEnabled]="false" >
+        <ion-header>
+        </ion-header>
+        <ion-content class="conten" scrollbar-y-auto>
+        <!-- ===================================================================================== -->
+            <div class="divprofile" >
+            <button class="profilebutton" menuClose (click)="navigatetoprofile()">
+                <ion-row >
+                <!-- ===================================================================================== -->
+                    <ion-col col-3 *ngIf="profile?.ppstatus == 0">
+                            <span *ngFor="let pi of profileimage" class="circle">{{pi.alphabet}}</span>
+                    </ion-col>
+                    <ion-col col-3 *ngIf="profile?.ppstatus == 1">
+                            <span  class="circle2"><img style="border-radius: 50%;object-fit: cover; height:100%;" src="{{imgsource}}" /></span>
+                    </ion-col>
+                <!-- ===================================================================================== -->
+                    <ion-col style="margin-left:5px; font-size:0.9em; " col-8>
+                        <ion-row col-12> {{ profile?.fullname }}</ion-row>
+                        <ion-row col-12> {{ profile?.username }} </ion-row>
+                    </ion-col>
+                </ion-row>
+                <!-- ===================================================================================== -->
+            </button>
+            </div>
+            <hr/>
+        <!-- ===================================================================================== -->
+            <ion-list no-lines class="listmenu" >
+                <button class="menu" menuClose ion-item *ngFor="let p of pages" [class.activeHighlight]="checkActive(p)" (click)="openPage(p)">
+                    <ion-icon  item-start [name]="p.myIcon"></ion-icon>{{p.title}}
+                    
+                </button>
+                <hr/>
+            </ion-list>
+        <!-- ===================================================================================== -->
+        </ion-content>
+        <ion-footer>
+            <p>&copy; 2018 MoonDust.Inc</p>
+        </ion-footer>
+      
+      </ion-menu>
+    <ion-nav [root]="rootPage" #content  swipeBackEnabled="false"></ion-nav>
+    
+    
+    

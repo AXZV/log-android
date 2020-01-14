@@ -1,0 +1,53 @@
+<ion-header class="header">
+  <ion-navbar hideBackButton color="color1" text-center>
+    <ion-title>Moon Dust</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="conten" text-center >
+    <ion-row>
+        <ion-col text-center>
+          <img height="150px" src="assets/imgs/earth.png" />
+        </ion-col>
+    </ion-row>
+<form [formGroup]="credentialsForm">
+    <ion-row>
+        <ion-col>
+            <ion-item>
+                <ion-label floating>Email Address</ion-label>
+                <ion-input [formControl]="credentialsForm.controls['email']" type="email" [(ngModel)]="user.email"></ion-input>
+            </ion-item>
+            <div *ngIf="!credentialsForm.controls.email.valid && credentialsForm.controls.email.dirty" class="validator-error">
+                Please enter a valid email.
+            </div>
+            <ion-item>
+                <ion-label floating>Password</ion-label>
+                <ion-input [formControl]="credentialsForm.controls['password']" name="password" type="{{type}}" [(ngModel)]="user.password" minlength="8" maxlength="50" required></ion-input>
+                <button class="showpass" title="Show Password" *ngIf="!showPass" ion-button large clear  type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-outline"></ion-icon></button>
+                <button class="showpass" title="Hide Password" *ngIf="showPass" ion-button large clear  type="button" item-right (click)="showPassword()"> <ion-icon name="ios-eye-off-outline"></ion-icon></button>
+            </ion-item>
+            <div *ngIf="!credentialsForm.controls.password.valid && credentialsForm.controls.password.dirty" class="validator-error">
+                Please enter a valid password.
+            </div>
+        </ion-col>
+    </ion-row>
+</form>
+    <ion-row>
+        <ion-col text-center>
+            <button class="signin" ion-button round outline [disabled]="!credentialsForm.valid"  (click)="login(user)" color="transparant">Sign In</button>            
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col text-center style="color:grey; font-size:12px;">
+         Forgot Your <button class="forgetpass_signup" (click)=" navigateToResetPasswordPage()" >Password?</button>
+        </ion-col>
+    </ion-row>
+</ion-content>
+<div class="hide-on-keyboard-open">
+<ion-footer class="ion-footer" style="position: absolute">
+    <ion-navbar class="ion-footer" hideBackButton text-center color="color1" style="position: initial; z-index:100; color:grey; font-size:12px;">
+      Don't have an account? <button class="forgetpass_signup" (click)="navigateToRegisterPage() ">Sign Up.</button>
+    </ion-navbar>
+
+</ion-footer>
+</div>
