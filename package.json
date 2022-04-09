@@ -52,7 +52,7 @@
     "ionic-image-loader": "^5.0.5",
     "ionic-img-viewer": "^2.9.0",
     "ionicons": "3.0.0",
-    "moment": "^2.22.2",
+    "moment": "^2.29.2",
     "ng2-password-strength-bar": "^1.2.0",
     "rxjs": "5.5.2",
     "sw-toolbox": "3.6.0",
